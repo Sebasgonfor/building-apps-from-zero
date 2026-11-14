@@ -38,3 +38,7 @@ Claude Code loads it automatically when you start a new app, write a PRD, plan a
 ## Works best with
 
 Optional companion skills it calls by name when installed: [superpowers](https://github.com/obra/superpowers) (`brainstorming`, `writing-plans`), `ui-polish`, `impeccable`, `ui-design-system`. Without them the skill still works; those steps fall back to the reference files.
+
+## License
+
+[MIT](LICENSE)
