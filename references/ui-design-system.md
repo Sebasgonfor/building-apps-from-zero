@@ -10,8 +10,9 @@ The model's default look is the average of every interface it has seen. Replace 
 2. **Derive three clearly different directions** from what the research showed. Combine sources: Index MCP to discover references, the browser to open and screenshot them, product galleries (Mobbin, Refero, Page Flows) for shipped patterns, art-direction galleries (Awwwards, Land-book) for composition and type. `design-taste-frontend` is one optional source among these (a library distilled from 247 curated sites that can deal directions), not a required step.
 3. **Build an intentional moodboard.** For each reference, write which decision you take from it (type, composition, color, icons, motion) and why it fits this product.
 4. **Present the three directions with trade-offs and wait for the user to pick one.** The user approves the art direction; Claude never picks it alone.
-5. **Design one pilot screen** with real content, navigation, a form or input, components and its states.
-6. **Score it** with the rubric below, refine, then extend to the rest.
+5. **Design one pilot screen in a design tool** (Claude Design, or Figma) with real content, navigation, a form or input, components and its states. Show it as a design, not as frontend code.
+6. **Score it** with the rubric below, refine with the user, then extend to the rest.
+7. **No frontend code until the user approves the design.** Approval of a direction is not approval of a screen. Building the pilot directly in code needs the user's explicit choice; never decide it alone, deadline or not.
 
 Research pipeline: find references (Index MCP, the free sources below) → open each in a browser and screenshot it → analyze what the screenshots show → deal three directions → user picks → design system → build with shadcn components.
 

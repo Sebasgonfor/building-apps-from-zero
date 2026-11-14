@@ -33,7 +33,7 @@ Conversation stays in `superpowers:brainstorming` (one question at a time); plan
 - Class project, weekend, prototype: one `docs/prd.md` holds stages 1-3 and the API/data contract, plus `docs/design-system.md` and the plan.
 - Real product: `docs/01-product-discovery.md`, `02-prd.md`, `ux/` (information-architecture, user-flows, interaction-specifications, wireframes, prototype), `design/` (visual direction, tokens, components, motion), `architecture/` (drivers, stack decisions, system, data model, API contracts, security, observability, `adr/`, `specs/<feature>.md`), `07-roadmap.md`, `08-quality.md`, `09-release.md`.
 
-**Under time pressure, compress, never skip:** the Phase 1 cut, the state matrix, the interaction rules and the Definition of Done. The prototype may be the first slices in code; the usability check then happens when the main flow works.
+**Under time pressure, compress, never skip:** the Phase 1 cut, the state matrix, the interaction rules, the approved design and the Definition of Done. Screens are designed and approved in a design tool before any frontend code; prototyping straight in code only when the user explicitly chooses it.
 
 ## Quality gates
 
@@ -88,6 +88,7 @@ One row per screen or zone. Every cell says what the user sees and can do.
 | "Here is the PRD, build the app" | Global context, small verified tasks: one slice, its spec, a reviewed plan, tests, review, merge on Done. |
 | "The full template has 18 sections, fill them all" | Size to the project. An empty or repeated section is noise. |
 | "Make it modern and premium" | That prompt produces the average AI look. Research real references, deal three directions, let the user pick. |
+| "The direction is picked, I'll build the pilot in code" | A direction is not a design. Design the pilot in Claude Design, get it approved, then write frontend code. |
 | "Generate each screen with AI" | Screens generated one by one drift. The AI follows the design system, never invents one per screen. |
 | "Let's use microservices, queues and Redis to be ready to scale" | Complexity needs a driver. Start with a modular monolith and add pieces when a real goal or risk demands them, recorded in an ADR. |
 | "The architecture is documented, the agent will follow it" | Documents erode. Enforce critical rules with types, tests, lint and CI. |
