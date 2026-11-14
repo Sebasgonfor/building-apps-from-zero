@@ -33,7 +33,7 @@ Claude Code loads it automatically when you start a new app, write a PRD, plan a
 | `references/planning.md` | 6. Roadmap and implementation planning |
 | `references/implementation.md` | 7. Implementation workflow |
 | `references/qa-polish.md` | 8. QA, UX validation and polish |
-| `references/build-and-quality.md` | 9. Release and continuous improvement |
+| `references/launch-operations.md` | 9. Launch, observability and continuous improvement |
 
 ## Works best with
 

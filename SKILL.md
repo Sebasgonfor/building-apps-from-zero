@@ -9,6 +9,10 @@ description: Use when starting a new app, product or major feature from scratch 
 
 Polish is not a phase at the end. It is a bar every slice clears before the next one starts. Decide *what* (problem, Phase 1, flows and states) before *how*, build in vertical slices, and have something deployed on day 1.
 
+Two rules cross all nine stages:
+- **Evidence for every important claim, a reason for every design decision.** AI may research, propose, implement and review; it never asserts what it did not check.
+- **Not a rigid waterfall.** When evidence from a later stage contradicts an earlier one (architecture limits the PRD, usability breaks a screen, production reveals a wrong assumption), go back and update that stage's source of truth. The goal is better decisions, not nine documents.
+
 Conversation stays in `superpowers:brainstorming` (one question at a time); plans go through `superpowers:writing-plans`. This skill defines which stages and artifacts must exist. Write every doc in the user's language. Before working a stage, read its reference file.
 
 ## Stages and required outputs
@@ -23,7 +27,7 @@ Conversation stays in `superpowers:brainstorming` (one question at a time); plan
 | 6 | Roadmap and plan | MVP with quality mandatory from v1; outcome milestones with **exit criteria**; vertical slices ordered **risks → foundations → main flow → complements → launch**; ready-for-dev specs; dependencies, risks with strategies; **Definition of Ready and Done**. **Slice 1 = walking skeleton deployed** (repo, CI, tests, one endpoint + one screen live) | `references/planning.md`, `superpowers:writing-plans` |
 | 7 | Build | Reproducible repo and engineering standards in the project's CLAUDE.md; per feature: **read existing code → reviewed plan → small increments with tests → review by a separate agent → integrate on DoD**; design-system components reused; CI from the first delivery; labeled mocks only | `references/implementation.md` |
 | 8 | QA and polish | On a **release candidate**: functional matrix with evidence, exploratory sessions, visual QA from real screenshots, interaction and motion QA, accessibility (automated + manual), performance (measured), security review, target devices, usability with real users, whole-product polish checklist; defects classified S0-S3 | `references/qa-polish.md` |
-| 9 | Release and improve | Monitoring, analytics for the success metrics, rollback; metrics decide Phase 2 | `references/build-and-quality.md` |
+| 9 | Launch and improve | Production readiness (no debug config, secrets or test accounts), deploy strategy sized to risk, **tested rollback**, internal → limited → general release, logs/metrics/traces/alerts without sensitive data, product analytics tied to the success metrics, event tracking plan, feedback loop, incident procedure with blameless postmortems, maintenance routines; metrics decide Phase 2 | `references/launch-operations.md` |
 
 **Size the docs to the project.** A doc exists only if it changes a decision.
 - Class project, weekend, prototype: one `docs/prd.md` holds stages 1-3 and the API/data contract, plus `docs/design-system.md` and the plan.
@@ -62,6 +66,9 @@ One row per screen or zone. Every cell says what the user sees and can do.
 |---------|---------|
 | "We'll do a polish pass at the end" | The end is when time runs out. Polish is in the Definition of Done of each slice; stage 8 is a whole-product check on top of that, never a substitute. |
 | "It looks good, let's launch" | Launch only through the release gate: evidence per area, no open S0/S1. |
+| "Deploy and we'll see what happens" | Never ship a critical version without knowing how a failure is detected and how you recover. Rollback is tested, not assumed. |
+| "Users asked for it, add it" | Feedback is evidence to weigh, not a backlog. Find recurring problems, measure impact, then decide; removing a feature is also progress. |
+| "Uptime is 99.9%, the product works" | Technical health is not value. Watch activation and retention against the discovery metrics. |
 | "Claude reviewed the security" | An AI review is not a security audit. Higher-risk products need specialist review or penetration tests. |
 | "Empty and error states later" | Later never comes. They are in the state matrix before the screen is built. |
 | "Build the whole backend, then the frontend" | Layers hide integration bugs until the end. Build vertical slices. |
